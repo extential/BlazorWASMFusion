@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="ActualLab.Fusion" Version="10.2.49" />
+        <PackageReference Include="ActualLab.Generators" PrivateAssets="all" Version="10.2.49" />
+        <PackageReference Include="MemoryPack.Generator" PrivateAssets="all" Version="1.21.4" />
+    </ItemGroup>
+</Project>

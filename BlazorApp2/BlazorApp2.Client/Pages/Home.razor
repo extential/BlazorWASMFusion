@@ -1,0 +1,33 @@
+﻿@page "/"
+@using ClassLibrary1.Interfaces
+
+<PageTitle>Home</PageTitle>
+
+<button class="btn btn-primary" @onclick="LoadReport">Load Report</button>
+
+<p>@_message</p>
+
+@code {
+    
+    [Inject] private IPeopleService PeopleService { get; set; } = null!;
+    [Inject] private AppState AppState { get; set; } = null!;
+    private string _message = "";
+
+    private async Task LoadReport()
+    {
+        _message = "";
+        var report = await AppState.LoadReport(Guid.Parse("01984f5d-ccda-49d1-b2ca-96abde87c4e5"));
+        foreach (var item in report.Items)
+        {
+            var type = item.GetType();
+            if (type.IsGenericType)
+            {
+                _message += $"Generic Type: {type.Name}, Generic Arguments: {string.Join(", -", type.GetGenericArguments().Select(t => t.Name))}";
+            }
+            else
+            {
+                _message += $"Type: {type.Name}";
+            }
+        }
+    }
+}

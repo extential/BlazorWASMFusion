@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+        <StaticWebAssetProjectMode>Default</StaticWebAssetProjectMode>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.7"/>
+        <PackageReference Include="ActualLab.Fusion.Blazor" Version="10.2.49" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="ActualLab.Generators" PrivateAssets="all" Version="10.2.49" />
+        <!--        <PackageReference Include="MemoryPack.Generator" PrivateAssets="all" Version="1.21.4" />-->
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\ClassLibrary1\ClassLibrary1.csproj" />
+    </ItemGroup>
+
+</Project>
